@@ -1,0 +1,180 @@
+/* Genel stili ayarla */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar button, .sidebar input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sidebar button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.sidebar button:hover {
+    background-color: #218838;
+}
+
+.sidebar button#showBorrowedBooks {
+    background-color: #dc3545;
+}
+
+.sidebar button#showBorrowedBooks:hover {
+    background-color: #c82333;
+}
+
+.sidebar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 5px;
+}
+
+form input, form select {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    position: relative;
+}
+
+li .status {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+li .status.available {
+    color: #28a745; /* Mevcut kitap rengi */
+}
+
+li .status.borrowed {
+    color: #dc3545; /* Ödünç alınmış kitap rengi */
+}
+
+li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li button.updateBook {
+    background-color: #ffc107;
+    color: #333;
+}
+
+li button.updateBook:hover {
+    background-color: #e0a800;
+}
+
+li button.deleteBook {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+li button.deleteBook:hover {
+    background-color: #c82333;
+}
+
+.hidden {
+    display: none;
+}
+
+#notification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#recentActions {
+    margin-top: 20px;
+}
