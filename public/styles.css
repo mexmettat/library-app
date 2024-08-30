@@ -1,145 +1,180 @@
-/* Genel stili ayarla */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #333;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #007bff;
+    background-color: #00bcd4;
     color: #fff;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
     margin: 0;
+    font-size: 24px;
+    letter-spacing: 1px;
 }
 
 .container {
     display: flex;
+    height: 100vh;
 }
 
 .sidebar {
     width: 250px;
-    background-color: #f4f4f4;
-    padding: 15px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .sidebar button, .sidebar input {
     width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 14px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar button {
-    background-color: #28a745;
-    color: #fff;
+    background-color: #00bcd4;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar button:hover {
-    background-color: #218838;
+    background-color: #0097a7;
 }
 
 .sidebar button#showBorrowedBooks {
-    background-color: #dc3545;
+    background-color: #ff5722;
 }
 
 .sidebar button#showBorrowedBooks:hover {
-    background-color: #c82333;
+    background-color: #e64a19;
 }
 
 .sidebar input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .main-content {
     flex-grow: 1;
-    padding: 20px;
+    padding: 40px;
+    overflow-y: auto;
 }
 
 section {
     margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 form label {
-    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
 }
 
 form input, form select {
-    margin-bottom: 10px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus {
+    border-color: #00bcd4;
+    outline: none;
 }
 
 form button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #00bcd4;
+    color: white;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #0097a7;
 }
 
 ul {
     list-style: none;
     padding: 0;
-    max-height: 300px;
-    overflow-y: auto;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 li {
-    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     display: flex;
-    align-items: center;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.3s ease;
     position: relative;
+}
+
+li:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
 li .status {
     font-weight: bold;
-    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
 }
 
 li .status.available {
-    color: #28a745; /* Mevcut kitap rengi */
+    background-color: #4caf50;
+    color: white;
 }
 
 li .status.borrowed {
-    color: #dc3545; /* Ödünç alınmış kitap rengi */
+    background-color: #f44336;
+    color: white;
 }
 
 li button {
-    margin-left: 10px;
-    padding: 5px 10px;
+    padding: 10px;
+    border-radius: 8px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    margin-top: 10px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
 }
 
 li button.updateBook {
@@ -148,33 +183,64 @@ li button.updateBook {
 }
 
 li button.updateBook:hover {
-    background-color: #e0a800;
+    background-color: #ffb300;
 }
 
 li button.deleteBook {
-    background-color: #dc3545;
-    color: #fff;
+    background-color: #f44336;
+    color: white;
 }
 
 li button.deleteBook:hover {
-    background-color: #c82333;
+    background-color: #e53935;
 }
 
 .hidden {
     display: none;
 }
 
+#bookListContainer {
+    max-height: 300px; /* Sabit yükseklik */
+    overflow-y: auto;  /* Dikey kaydırma */
+    margin-bottom: 20px;
+}
+
+li {
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+li .status {
+    margin-left: 15px;
+}
+
 #notification {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00bcd4;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    display: none;
+    font-size: 14px;
+}
+
+#notification.show {
+    display: block;
 }
 
 #recentActions {
     margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
