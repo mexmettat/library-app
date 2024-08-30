@@ -233,8 +233,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Son işlemleri listeye ekle
     function addActionToList(action) {
-        const li = document.createElement('li');
-        li.textContent = action;
-        recentActionsList.appendChild(li);
-    }
+    // Önce mevcut bildirimleri temizle
+    const existingActions = Array.from(recentActionsList.querySelectorAll('li'));
+    const duplicate = existingActions.some(item => item.textContent === action);
+    
+    if (duplicate) return; // Aynı işlem varsa ekleme
+
+    const li = document.createElement('li');
+    li.textContent = action;
+    recentActionsList.appendChild(li);
+}
+
 });
