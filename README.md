@@ -6,8 +6,8 @@ Technologies Used:
 Frontend: HTML, CSS, JavaScript
 Backend: Node.js
 Database: MySQL
-Key Features:
 
+Key Features:
 List Books: Display all available books in the library.
 Search Books: Find books based on various criteria.
 Add New Books: Add new books to the library database.
@@ -18,8 +18,8 @@ Recent Actions: Display recent actions in a dedicated section.
 Borrowed Books View: Show borrowed books with a sidebar button.
 Modern UI Design: Ensured a professional and organized look, avoiding excessive scrolling with a sidebar design.
 User Authentication: Added login and sign-up functionalities with encrypted passwords stored in the SQL database. Includes a logout feature for user sessions.
-Challenges:
 
+Challenges:
 Ensuring the update form disappeared after updates and correctly handling book statuses.
 Implementing WebSockets integration for real-time notifications seamlessly.
 Keeping the design modern and user-friendly, with a professional appearance.
