@@ -224,6 +224,13 @@ document.addEventListener('DOMContentLoaded', () => {
     showBorrowedBooksButton.addEventListener('click', showBorrowedBooks);
     showAllBooksButton.addEventListener('click', showAllBooks);
 
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        // Çıkış işlemi gerçekleştirme
+        // Çıkış yaptıktan sonra kullanıcıyı giriş sayfasına yönlendirme
+        window.location.href = 'index.html';
+    });
+    
+
     // Bildirim göster
     function showNotification(message) {
         notification.textContent = message;

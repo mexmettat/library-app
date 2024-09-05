@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kütüphane Uygulaması</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kütüphane Uygulaması</h1>
+        <button id="logoutButton" class="logout-button">Çıkış Yap</button>
+    </header>
+    
+    <div class="container">
+        <nav class="sidebar">
+            <button id="showAddBookForm">Yeni Kitap Ekle</button>
+            <input type="text" id="searchBooks" placeholder="Kitap Ara">
+            <button id="showBookList">Kitapları Göster</button>
+            <button id="showBorrowedBooks">Ödünç Alınan Kitaplar</button>
+            <button id="showAllBooks">Tüm Kitaplar</button>
+        </nav>
+        
+        <main class="main-content">
+            <section id="bookList">
+                <h2>Kitap Listesi</h2>
+                <ul id="bookListContainer">
+                    <!-- Kitaplar burada listelenecek -->
+                </ul>
+            </section>
+            
+            <section id="addBookForm" class="hidden">
+                <h2>Yeni Kitap Ekle</h2>
+                <form id="formAddBook">
+                    <label for="bookTitle">Başlık:</label>
+                    <input type="text" id="bookTitle" required>
+                    <label for="bookAuthor">Yazar:</label>
+                    <input type="text" id="bookAuthor" required>
+                    <button type="submit">Ekle</button>
+                </form>
+            </section>
+            
+            <section id="updateBookForm" class="hidden">
+                <h2>Kitap Güncelle</h2>
+                <form id="formUpdateBook">
+                    <input type="hidden" id="updateBookId">
+                    <label for="updateBookTitle">Başlık:</label>
+                    <input type="text" id="updateBookTitle" required>
+                    <label for="updateBookAuthor">Yazar:</label>
+                    <input type="text" id="updateBookAuthor" required>
+                    <label for="updateBookStatus">Durum:</label>
+                    <select id="updateBookStatus">
+                        <option value="available">Mevcut</option>
+                        <option value="borrowed">Ödünç Alınmış</option>
+                    </select>
+                    <button type="submit">Güncelle</button>
+                </form>
+            </section>
+            
+            <section id="borrowBookForm" class="hidden">
+                <h2>Kitap Ödünç Al</h2>
+                <form id="formBorrowBook">
+                    <label for="borrowBookId">Kitap ID:</label>
+                    <input type="text" id="borrowBookId" required>
+                    <button type="submit">Ödünç Al</button>
+                </form>
+            </section>
+
+            <section id="recentActions">
+                <h2>Son İşlemler</h2>
+                <ul id="recentActionsList">
+                    <!-- Son işlemler burada listelenecek -->
+                </ul>
+            </section>
+        </main>
+    </div>
+    
+    <div id="notification" class="hidden"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

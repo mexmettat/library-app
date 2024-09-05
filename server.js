@@ -3,17 +3,51 @@ const mysql = require('mysql2');
 const WebSocket = require('ws');
 const bodyParser = require('body-parser');
 const path = require('path');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 // Express app
 const app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/// Giriş işlemi
+app.post('/login', (req, res) => {
+    const { email, password } = req.body;
+    db.query('SELECT * FROM users WHERE email = ?', [email], (err, result) => {
+      if (err) throw err;
+      if (result.length > 0) {
+        bcrypt.compare(password, result[0].password, (err, isMatch) => {
+          if (isMatch) {
+            res.json({ success: true, message: 'Giriş başarılı' });
+          } else {
+            res.json({ success: false, message: 'Yanlış şifre' });
+          }
+        });
+      } else {
+        res.json({ success: false, message: 'Kullanıcı bulunamadı' });
+      }
+    });
+  });
+  
+  // Üye olma işlemi
+  app.post('/signup', (req, res) => {
+    const { username, email, password } = req.body;
+    bcrypt.hash(password, 10, (err, hash) => {
+      if (err) throw err;
+      db.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', 
+        [username, email, hash], (err, result) => {
+          if (err) throw err;
+          res.send('Üyelik başarılı');
+        });
+    });
+  });
+
 // MySQL veritabanı bağlantısı
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'mehmet123', // Kendi şifrenizle değiştirin
+    password: 'mehmet123',
     database: 'library'
 });
 
