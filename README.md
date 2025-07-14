@@ -97,7 +97,44 @@ library-app/
 - Managing form states after updates  
 - Implementing and testing WebSocket events  
 - Creating a clean, user-friendly interface  
-- Securing user authentication and sessions  
+- Securing user authentication and sessions
+
+## 📸 Screenshots
+
+Below are some screenshots from the Library Management System:
+
+- **Main Screen**  
+  ![Main Screen](screenshots/anaekran.png)  
+  The main dashboard of the application. Users can access all key features from here.
+
+- **Login Screen**  
+  ![Login Screen](screenshots/giriş%20ekranı.png)  
+  The screen where users log into the system with secure authentication.
+
+- **Update Section**  
+  ![Update Section](screenshots/güncelleme%20kısmı.png)  
+  Used to edit and update information about existing books.
+
+- **Book Storage Section**  
+  ![Book Storage Section](screenshots/kitap%20depolama%20kısmı.png)  
+  Displays all stored books and allows for management operations.
+
+- **Recent Actions Section**  
+  ![Recent Actions Section](screenshots/son%20işlemler%20kısmı.png)  
+  Shows the most recent activities in the system, such as borrowing or editing books.
+
+- **Add New Book Section**  
+  ![Add New Book Section](screenshots/yeni%20kitap%20ekleme%20kısmı.png)  
+  A form to add new books to the system.
+
+- **Borrowed Books**  
+  ![Borrowed Books](screenshots/ödünç%20alınanlar.png)  
+  Displays the list of books currently borrowed by users.
+
+- **Sign Up Screen**  
+  ![Sign Up Screen](screenshots/üye%20ol%20ekranı.png)  
+  Allows new users to register for an account.
+
 
 ## 👨‍💻 Developer
 
